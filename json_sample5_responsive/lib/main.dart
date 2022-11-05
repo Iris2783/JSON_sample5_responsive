@@ -11,11 +11,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'JSON Reader',
+      theme: ThemeData(primarySwatch: Colors.green),
       home: ResponsiveLayout(
         mobileScaffold: const MobileScaffold(),
         tabletScaffold: const TabletScaffold(),
