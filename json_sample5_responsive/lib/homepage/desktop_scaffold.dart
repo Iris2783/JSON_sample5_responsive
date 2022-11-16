@@ -18,6 +18,8 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
         children: [
           SingleChildScrollView(
             child: Container(
+              height: 1500,
+              width: 250,
               child: Column(
                 children: const [
                   MyDrawer(),
