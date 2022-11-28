@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:json_sample5_responsive/listpage_post/desktop_postlistpage.dart';
 import 'package:json_sample5_responsive/listpage_post/moblie_postlistpage.dart';
 import 'package:json_sample5_responsive/listpage_post/tablet_postlistpage.dart';
+import 'package:json_sample5_responsive/listpage_user/desktop_userlistpage.dart';
+import 'package:json_sample5_responsive/listpage_user/mobile_userlistpage.dart';
+import 'package:json_sample5_responsive/listpage_user/tablet_userlistpage.dart';
 import 'package:json_sample5_responsive/responsive_layout/responsive_layout.dart';
-import 'package:json_sample5_responsive/sample/sample.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -77,7 +79,11 @@ class _MyDrawerState extends State<MyDrawer> {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const SamplePage(),
+                      builder: (context) => ResponsiveLayout(
+                        mobileScaffold: const MobileUserListPage(),
+                        tabletScaffold: const TabletUserListPage(),
+                        desktopScaffold: const DesktopUserListPage(),
+                      ),
                     ),
                   );
                 },
