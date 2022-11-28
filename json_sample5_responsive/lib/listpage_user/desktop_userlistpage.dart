@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:json_sample5_responsive/detailspage_user/desktop_userdetailpage.dart';
+import 'package:json_sample5_responsive/detailspage_user/mobile_userdetailpage.dart';
+import 'package:json_sample5_responsive/detailspage_user/tablet_userdetailpage.dart';
 import 'package:json_sample5_responsive/drawer/mydrawer.dart';
-import 'package:json_sample5_responsive/sample/sample.dart';
+import 'package:json_sample5_responsive/responsive_layout/responsive_layout.dart';
 import 'package:json_sample5_responsive/service/remote_service_users.dart';
 
 class DesktopUserListPage extends StatefulWidget {
@@ -15,7 +18,7 @@ class _DesktopUserListPageState extends State<DesktopUserListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('POST_Desktop'),
+        title: const Text('USER_Desktop'),
       ),
       body: Row(
         children: [
@@ -81,9 +84,14 @@ class _DesktopUserListPageState extends State<DesktopUserListPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const SamplePage(
-                                      // snapshot.data[index],
-                                      ),
+                                  builder: (context) => ResponsiveLayout(
+                                    mobileScaffold: MobileUserDetailPage(
+                                        snapshot.data[index]),
+                                    tabletScaffold: TabletUserDetailPage(
+                                        snapshot.data[index]),
+                                    desktopScaffold: DesktopUserDetailPage(
+                                        snapshot.data[index]),
+                                  ),
                                 ),
                               );
                             },

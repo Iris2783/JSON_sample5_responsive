@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:json_sample5_responsive/sample/sample.dart';
+import 'package:json_sample5_responsive/detailspage_post/desktop_postdetailpage.dart';
+import 'package:json_sample5_responsive/detailspage_post/mobile_postdetailpage.dart';
+import 'package:json_sample5_responsive/detailspage_post/tablet_postdetailpage.dart';
+import 'package:json_sample5_responsive/responsive_layout/responsive_layout.dart';
 import 'package:json_sample5_responsive/service/remote_service_posts.dart';
 
 class MobilePostListPage extends StatefulWidget {
@@ -65,9 +68,14 @@ class _MobilePostListPageState extends State<MobilePostListPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SamplePage(
-                                // snapshot.data[index],
-                                ),
+                            builder: (context) => ResponsiveLayout(
+                              mobileScaffold:
+                                  MobilePostDetailPage(snapshot.data[index]),
+                              tabletScaffold:
+                                  TabletPostDetailPage(snapshot.data[index]),
+                              desktopScaffold:
+                                  DesktopPostDetailPage(snapshot.data[index]),
+                            ),
                           ),
                         );
                       },

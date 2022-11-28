@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:json_sample5_responsive/model/post.dart';
 
-class MobilePostDetailPage extends StatelessWidget {
+class TabletPostDetailPage extends StatelessWidget {
   final Post posts;
-  const MobilePostDetailPage(this.posts, {super.key});
+  const TabletPostDetailPage(this.posts, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PostDetail_Mobile'),
+        title: const Text('PostDetail_Tablet'),
       ),
       body: Align(
         alignment: Alignment.topCenter,
